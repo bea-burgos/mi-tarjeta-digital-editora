@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tarjeta Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 100%;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .info-text {
+            flex: 1;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .info-text a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .buttons {
+            padding: 0 30px 30px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 30px 30px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .qr-section {
+            text-align: center;
+            padding: 0 30px 30px;
+        }
+
+        .qr-code {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        #qrcode {
+            width: 200px;
+            height: 200px;
+        }
+
+        .qr-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="avatar">JP</div>
+            <div class="name">Juan Pérez</div>
+            <div class="title">Desarrollador Web | Consultor Digital</div>
+        </div>
+
+        <div class="content">
+            <div class="info-item">
+                <div class="icon">📧</div>
+                <div class="info-text">
+                    <a href="mailto:juan.perez@ejemplo.com">juan.perez@ejemplo.com</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">📱</div>
+                <div class="info-text">
+                    <a href="tel:+34600123456">+34 600 123 456</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">🌐</div>
+                <div class="info-text">
+                    <a href="https://www.ejemplo.com" target="_blank">www.ejemplo.com</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">📍</div>
+                <div class="info-text">Madrid, España</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="guardarContacto()">
+                💾 Guardar Contacto
+            </button>
+            <button class="btn btn-secondary" onclick="compartir()">
+                📤 Compartir
+            </button>
+        </div>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/tuusuario" class="social-btn" target="_blank">in</a>
+            <a href="https://twitter.com/tuusuario" class="social-btn" target="_blank">𝕏</a>
+            <a href="https://github.com/tuusuario" class="social-btn" target="_blank">⚡</a>
+            <a href="https://instagram.com/tuusuario" class="social-btn" target="_blank">📷</a>
+        </div>
+
+        <div class="qr-section">
+            <div class="qr-text">Escanea para guardar mi contacto</div>
+            <div class="qr-code">
+                <div id="qrcode"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        const urlActual = window.location.href;
+        new QRCode(document.getElementById("qrcode"), {
+            text: urlActual,
+            width: 200,
+            height: 200,
+            colorDark: "#667eea",
+            colorLight: "#ffffff",
+        });
+
+        function guardarContacto() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Juan Pérez
+ORG:Mi Empresa
+TITLE:Desarrollador Web | Consultor Digital
+TEL;TYPE=CELL:+34600123456
+EMAIL:juan.perez@ejemplo.com
+URL:https://www.ejemplo.com
+ADR;TYPE=WORK:;;Madrid;España
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Juan_Perez.vcf';
+            link.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        async function compartir() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Mi Tarjeta Digital',
+                        text: 'Conectemos! Aquí está mi información de contacto',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    copiarEnlace();
+                }
+            } else {
+                copiarEnlace();
+            }
+        }
+
+        function copiarEnlace() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('¡Enlace copiado al portapapeles!');
+        }
+    </script>
+</body>
+</html>
