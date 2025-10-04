@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tarjeta Digital</title>
+    <title>Beatriz Burgos - Editora</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -26,7 +26,7 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            max-width: 400px;
+            max-width: 420px;
             width: 100%;
             overflow: hidden;
             animation: fadeIn 0.5s ease;
@@ -39,7 +39,7 @@
 
         .header {
             background: linear-gradient(135deg, #1a2a6c 0%, #0f1b4c 100%);
-            padding: 40px 20px;
+            padding: 40px 20px 30px;
             text-align: center;
             color: white;
         }
@@ -73,6 +73,26 @@
             font-size: 16px;
             opacity: 0.9;
             font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        .specialization {
+            font-size: 14px;
+            opacity: 0.85;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .value-prop {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 20px;
+            margin: 20px 20px 0;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
         .content {
@@ -97,6 +117,7 @@
         .icon {
             width: 45px;
             height: 45px;
+            min-width: 45px;
             margin-right: 15px;
             display: flex;
             align-items: center;
@@ -118,6 +139,10 @@
         .info-text a {
             color: #1a2a6c;
             text-decoration: none;
+        }
+
+        .info-text a:hover {
+            text-decoration: underline;
         }
 
         .buttons {
@@ -175,7 +200,7 @@
             background: #f8f9fa;
             color: #1a2a6c;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 16px;
             transition: all 0.3s;
             font-weight: 600;
         }
@@ -219,7 +244,13 @@
                 <img src="foto-perfil.jpg" alt="Beatriz Burgos">
             </div>
             <div class="name">Beatriz Burgos</div>
-            <div class="title">Editora literaria | Periodista</div>
+            <div class="title">Editora literaria | Ghostwriter | Periodista</div>
+            <div class="specialization">
+                Edición de ficción, ensayo y divulgación cultural
+            </div>
+            <div class="value-prop">
+                Potencio la voz de autores y editoriales para conectar con el lector
+            </div>
         </div>
 
         <div class="content">
@@ -240,9 +271,11 @@
             <div class="info-item">
                 <div class="icon">🌐</div>
                 <div class="info-text">
-                    <a href="https://www.beatrizburgoseditora.com" target="_blank">www.beatrizburgoseditora.com</a>
+                    <a href="https://www.beatrizburgoseditora.com" target="_blank">beatrizburgoseditora.com</a>
                 </div>
             </div>
+
+        
 
             <div class="info-item">
                 <div class="icon">📍</div>
@@ -255,13 +288,12 @@
                 💾 Guardar Contacto
             </button>
             <button class="btn btn-secondary" onclick="compartir()">
-                📤 Compartir
+                📤 Compartir Tarjeta
             </button>
         </div>
 
         <div class="social-links">
-            <a href="https://linkedin.com/in/bea-burgos/" class="social-btn" target="_blank">in</a>
-            <a href="https://github.com/bea-burgos" class="social-btn" target="_blank">GH</a>
+            <a href="https://linkedin.com/in/bea-burgos/" class="social-btn" target="_blank" title="LinkedIn">in</a>
         </div>
 
         <div class="qr-section">
@@ -288,7 +320,7 @@
 VERSION:3.0
 FN:Beatriz Burgos
 ORG:Beatriz Burgos Editora
-TITLE:Editora literaria | Periodista
+TITLE:Editora literaria | Ghostwriter | Periodista
 TEL;TYPE=CELL:+34685211915
 EMAIL:contacto@beatrizburgoseditora.com
 URL:https://www.beatrizburgoseditora.com
@@ -308,8 +340,8 @@ END:VCARD`;
             if (navigator.share) {
                 try {
                     await navigator.share({
-                        title: 'Mi Tarjeta Digital',
-                        text: 'Conectemos! Aquí está mi información de contacto',
+                        title: 'Beatriz Burgos - Editora',
+                        text: 'Conectemos para hablar de tu proyecto editorial',
                         url: window.location.href
                     });
                 } catch (err) {
@@ -322,9 +354,8 @@ END:VCARD`;
 
         function copiarEnlace() {
             navigator.clipboard.writeText(window.location.href);
-            alert('¡Enlace copiado al portapapeles!');
+            alert('Enlace copiado al portapapeles');
         }
     </script>
 </body>
 </html>
-
